@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+.vagrant/
+links.txt
+.DS_Store

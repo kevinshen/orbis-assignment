@@ -6,5 +6,9 @@ sudo apt-get install -y vim
 sudo pip install flask
 sudo pip install flask-sqlalchemy
 sudo pip install werkzeug
+sudo pip install beautifulsoup4
+sudo pip install requests
+sudo pip install simplejson
+sudo pip install jinja2
 
 echo hello

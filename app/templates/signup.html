@@ -1,112 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>State Street ETF Data</title>
-  <link rel="stylesheet" href="static/css/bootstrap.min.css">
-  <script src="static/js/jquery-2.2.0.js"></script>
+{% extends "layout.html" %}
 
-<!--
-  <script type="text/javascript">
-  $(function() {
-    $('#btnSignUp').click(function() {
- 
-        $.ajax({
-            url: '/signUp',
-            data: $('form').serialize(),
-            type: 'POST',
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    });
-});
-  </script>
--->
-</head>
+{% block head %}
+<title>Sign up</title>
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/auth.css">
+<script src="static/js/jquery-2.2.0.js"></script>
+<script src="static/js/signup.js"></script>
+{% endblock %}
 
-<body>
-  <div class="container">
-  	<div id="signin">
+{% block content %}
+  <div class="auth-container">
+  	<div class="auth">
   	  <form>
 	  	<div class="form-group">
 	  	  <label for="username">Username</label>
-	  	  <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+	  	  <input type="text" name="username" class="form-control" id="username" placeholder="Alphanumeric characters only">
 	  	</div>
 	  	<div class="form-group">
 	  	  <label for="password">Password</label>
-	  	  <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+	  	  <input type="password" name="password" class="form-control" id="password" placeholder="At least 8 characters">
 	  	</div>
 	  	<div class="form-group">
 	  	  <label for="fullname">Full Name</label>
-	  	  <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Name">
+	  	  <input type="text" name="fullname" class="form-control" id="fullname" placeholder="First Last">
 	  	</div>
 	  	<div class="form-group">
 	  	  <label for="email">Email</label>
-	  	  <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+	  	  <input type="email" name="email" class="form-control" id="email" placeholder="e.g. helloworld@gmail.com">
 	  	</div>
-	  	<button id="register" type="button" class="btn btn-default">Submit</button>
-      <!--<input id="register" type="button" class="btn btn-default">Submit</input>-->
+	  	<button id="register" type="button" class="btn btn-success" style="width: 100%;">Sign up</button>
       <br><br><div id="error"></div>
 	  </form>
   	</div>
-  	<div id="register">
-  	</div>
   </div>
-</body>
+{% endblock %}
+
 
 </html>
-
-<script type="text/javascript">
-
-$(function() {
-
-    $('#register').click(function() {
-
-    	/*var data = [];
-
-    	data.username = 'lol';
-    	data.password = 'lol';
-    	data.fullname = 'lol';
-    	data.email = 'lol';
-
-    	console.log(data);*/
- 
-        $.ajax({
-            url: '/signup',
-            //data: $('form').serialize(),
-            data: $('form').serialize(),
-            type: 'POST',
-            success: function(response) {
-                console.log(response);
-                var result = JSON.parse(response).message;
-                //window.location.replace('/signup');
-                /*setTimeout(function() {
-                  $('#error').html('Email is already taken');
-                }, 3000);*/
-                //$('#error').html('Email is already taken');
-                if (result == 'User created successfully!') {
-                  window.location.assign('/home');
-                } else {
-                  $('#error').html('Error! ' + result);
-                }
-                //window.location.href = '/home';
-                /*$.ajax({
-                	url: '/home',
-                	type: 'POST',
-                	success: function(data) {
-
-                	}
-                });*/
-
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    });
-});
-
-</script>

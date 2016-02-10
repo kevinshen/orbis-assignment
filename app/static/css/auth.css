@@ -1,0 +1,11 @@
+.auth-container {
+  margin: 50px auto;
+  width: 640px;
+}
+ 
+.auth {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+}

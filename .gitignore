@@ -3,3 +3,5 @@
 .vagrant/
 links.txt
 .DS_Store
+testdb.py
+test.html

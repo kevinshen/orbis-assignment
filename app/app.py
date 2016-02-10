@@ -7,6 +7,7 @@ from werkzeug import generate_password_hash, check_password_hash
 #from scraper import scraper
 
 from bs4 import BeautifulSoup
+
 import requests
 
 import simplejson

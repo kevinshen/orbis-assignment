@@ -10,7 +10,7 @@ Create a test database, and set the MySQL database configuration in app.py line 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db'
 ```
 
-Run the SQL commands in init.sql. Then cd into the app directory, and run ```bash python app.py ```
+Run the SQL commands in init.sql. Then cd into the app directory, and run `python app.py`
 
 ### Running on VirtualBox
 

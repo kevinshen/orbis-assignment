@@ -325,7 +325,8 @@ def history():
 
 @app.route('/get_history', methods=['GET'])
 def get_history():
-	history_query = SearchHistory.query.order_by(SearchHistory.timestamp.desc()).all()
+	_user_id = User.query.filter_by(email=session['email']).first().user_id
+	history_query = SearchHistory.query.filter_by(user_id=_user_id).order_by(SearchHistory.timestamp.desc()).all()
 	etf_list = {i: history_query[i].etf for i in range(len(history_query))}
 	timestamp = {i: str(history_query[i].timestamp) for i in range(len(history_query))}
 	data = {'etf_list':etf_list, 'timestamp':timestamp}

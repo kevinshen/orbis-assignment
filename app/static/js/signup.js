@@ -9,7 +9,7 @@ $(document).ready(function() {
             success: function(response) {
                 console.log(response);
                 var result = JSON.parse(response).message;
-                if (result == 'User created successfully!') {
+                if (result == 'Success!') {
                   window.location.assign('/home');
                 } else {
                   $('#error').html('Error! ' + result);
@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(function() {
         $("form input").keypress(function (e) {
             if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-                $('#authenticate').click();
+                $('#register').click();
                 return false;
             } else {
                 return true;
